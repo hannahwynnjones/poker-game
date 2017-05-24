@@ -1,0 +1,52 @@
+.board {
+	height: 80%;
+	width: 100%;
+	display: inline-block;
+}
+.card {
+	height: 200px;
+	width: 150px;
+	background: rgb(255,255,0);
+	border: 1px solid rgb(0,0,0);
+	border-radius: 10px;
+	float: left;
+  display: inline-block;
+  background-color: lightgrey;
+  padding: 20px;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.playerOneCards, .playerTwoCards {
+  display: inline-block;
+  padding: 20px;
+}
+
+.playerOneCards {
+  background-color: lightpink;
+}
+.playerTwoCards {
+   background-color: lightblue;
+}
+
+.start {
+  width: 100px;
+  /*position: relative;*/
+  margin: 20px;
+  display: inline-block;
+
+}
+button {
+  font-size: 20px;
+  background-color: green;
+}
+
+.winner {
+  background-color: orange;
+  width: 300px;
+  float: left;
+  margin: 20px;
+  font-size: 30px;
+  display: inline-block;
+
+}
