@@ -17,16 +17,19 @@
   margin: 0 5px;
 }
 
-.playerOneCards, .playerTwoCards {
+.playerCards {
   display: inline-block;
   padding: 20px;
 }
 
-.playerOneCards {
+.player0Cards {
+  background-color: LightCyan;
+}
+.player1Cards {
   background-color: lightpink;
 }
-.playerTwoCards {
-   background-color: lightblue;
+.player2Cards {
+  background-color: lightblue;
 }
 
 .start {
@@ -49,4 +52,16 @@ button {
   font-size: 30px;
   display: inline-block;
 
+}
+
+.settings {
+  display: block;
+  background-color: yellow;
+  width: 300px;
+  height: 100px;
+  padding: 20px;
+}
+
+label {
+  display: block;
 }
