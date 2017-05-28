@@ -42,26 +42,58 @@
 button {
   font-size: 20px;
   background-color: green;
+  margin: 10px;
 }
 
 .winner {
   background-color: orange;
   width: 300px;
-  float: left;
   margin: 20px;
   font-size: 30px;
   display: inline-block;
 
 }
-
+/*
 .settings {
   display: block;
-  background-color: yellow;
   width: 300px;
   height: 100px;
   padding: 20px;
-}
+}*/
 
 label {
   display: block;
+}
+
+span {
+  padding: 5px;
+}
+
+.totalBoard {
+  text-align: left;
+
+}
+
+.top {
+  width: 640px; /*can be in percentage also.*/
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0px 0px 20px -3px grey;
+
+}
+
+.bottom {
+  float: left;
+  display: inline-block;
+}
+
+.Scoreboard {
+  margin-left: 50px;
+}
+
+.box {
+  margin: 0 auto;
+  text-align: center;
 }

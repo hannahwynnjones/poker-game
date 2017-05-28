@@ -68,41 +68,41 @@ $(()=>{
     function createDeck() {
       console.log('firing createDeck');
       for(i = 0; i < p; i++) {
-        $('.board').append('<div class="playerCards player'+i+'Cards"><h2>This is player '+i+'\'s board</h2></div>');
+        $('.board').append('<div class="playerCards player'+i+'Cards"><h2>This is player '+(i+1)+'\'s board</h2></div>');
       //then create cards for each deck - This would work better as a loop, but i couldn't get the loops I tried to give me different classes er board.
         if (i===0) {
           for(j = 0; j < c; j++) {
-            $('.player0Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+            $('.player0Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: <span></span></div><br><div class="pointsp'+i+'c'+j+'">points: <span></span></div></div>');
           }
         }
         else if (i===1) {
           for(j = 0; j < c; j++) {
-            $('.player1Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+            $('.player1Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: <span></span></div><br><div class="pointsp'+i+'c'+j+'">points: <span></span></div></div>');
           }
         }
         else if (i===2) {
           for(j = 0; j < c; j++) {
-            $('.player2Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+            $('.player2Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: <span></span></div><br><div class="pointsp'+i+'c'+j+'">points: <span></span></div></div>');
           }
         }
         else if (i===3) {
           for(j = 0; j < c; j++) {
-            $('.player3Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+            $('.player3Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: <span></span></div><br><div class="pointsp'+i+'c'+j+'">points: <span></span></div></div>');
           }
         }
         else if (i===4) {
           for(j = 0; j < c; j++) {
-            $('.player4Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+            $('.player4Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: <span></span></div><br><div class="pointsp'+i+'c'+j+'">points: <span></span></div></div>');
           }
         }
         else if (i===5) {
           for(j = 0; j < c; j++) {
-            $('.player5Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+            $('.player5Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: <span></span></div><br><div class="pointsp'+i+'c'+j+'">points: <span></span></div></div>');
           }
         }
         else if (i===6) {
           for(j = 0; j < c; j++) {
-            $('.player6Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+            $('.player6Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: <span></span></div><br><div class="pointsp'+i+'c'+j+'">points: <span></span></div></div>');
           }
         }
       }
