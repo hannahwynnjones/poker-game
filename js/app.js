@@ -2,6 +2,7 @@ console.log('JS loaded');
 
 $(()=>{
   //looking at 2 player game with 5 cards first then will look at changing these varibles and shorten code using forEach loops
+
   var player0Deck = [];
   var player1Deck = [];
   var player2Deck = [];
@@ -14,10 +15,12 @@ $(()=>{
   let total1 = 0;
   let total2 = 0;
   let total3 = 0;
+
   let i = 0;
   let j = 0;
   var p = $('#noOfPlayers').val();
   var c = $('#noOfCards').val();
+
   //using points for now, will look at moving over to jack, ace, king and queen later - and add images
   const names = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   // const cardies = [{points: 1, name: 'Ace'}, {points: 2, name: 'Two'}, {points: 3, name: 'Three'}, {points: 4, name: 'Four'}, {points: 5, name: 'Five'}, {points: 6, name: 'Six'}, {points: 7, name: 'Seven'}, {points: 8, name: 'Eight'}, {points: 9, name: 'Nine'}, {points: 10, name: 'Ten'}, {points: 11, name: 'Jack'}, {points: 12, name: 'Queen'}, {points: 13, name: 'King'}];
@@ -132,27 +135,58 @@ $(()=>{
 
   function drawCards(e) {
     e.preventDefault();
+    // clear the board
+    $('.board').html('');
+
+    var p = $('#noOfPlayers').val();
+    var c = $('#noOfCards').val();
     //slices top 5 off each deck
     createDeck();
     addTotal();
-
   //  placeCards();
 
     // create 'deck' for number of players
     function createDeck() {
+      console.log('firing createDeck');
       for(i = 0; i < p; i++) {
         $('.board').append('<div class="playerCards player'+i+'Cards"><h2>This is player '+i+'\'s board</h2></div>');
-        createCards(i);
+      //then create cards for each deck - This would work better as a loop, but i couldn't get the loops I tried to give me different classes er board.
+        if (i===0) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player0Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
+          }
+        }
+        else if (i===1) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player1Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
+          }
+        }
+        else if (i===2) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player2Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
+          }
+        }
+        else if (i===3) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player3Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
+          }
+        }
+        else if (i===4) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player4Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
+          }
+        }
       }
     }
 
-    function createCards(i) {
-      for(j = 0; j < c; j++) {
-        $('.playerCards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
-      }
-    }
 
     function addTotal() {
+      console.log('firing addTotal');
       for(i = 0; i < p; i++) {
         $('.totalBoard').append('<div class=""><h1>Player '+i+' cards: <span class ="total'+i+'Span">0</span></h1></div>');
       }
