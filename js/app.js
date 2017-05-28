@@ -7,14 +7,8 @@ $(()=>{
   var player1Deck = [];
   var player2Deck = [];
   var player3Deck = [];
-  let total0Span = 0;
-  let total1Span = 0;
-  let total2Span = 0;
-  let total3Span = 0;
-  let total0 = 0;
-  let total1 = 0;
-  let total2 = 0;
-  let total3 = 0;
+  var player4Deck = [];
+
 
   let i = 0;
   let j = 0;
@@ -105,10 +99,70 @@ $(()=>{
     const $suitp3c5 = $('.suitp3c5');
     const $pointsp3c5 = $('.pointsp3c5');
 
-  $submit.on('click', drawCards);
-  $start.on('click', placeCards);
+  $submit.on('click', drawBoard);
+  $start.on('click', dealCards);
 
-// shuffle all 52 cards
+  function drawBoard(e) {
+    e.preventDefault();
+    // clear the board
+    $('.board').html('');
+
+    var p = $('#noOfPlayers').val();
+    var c = $('#noOfCards').val();
+    //slices top 5 off each deck
+    createDeck();
+    addTotal();
+
+    //===========create 'deck' for number of players=======
+    function createDeck() {
+      console.log('firing createDeck');
+      for(i = 0; i < p; i++) {
+        $('.board').append('<div class="playerCards player'+i+'Cards"><h2>This is player '+i+'\'s board</h2></div>');
+      //then create cards for each deck - This would work better as a loop, but i couldn't get the loops I tried to give me different classes er board.
+        if (i===0) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player0Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+          }
+        }
+        else if (i===1) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player1Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+          }
+        }
+        else if (i===2) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player2Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+          }
+        }
+        else if (i===3) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player3Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+          }
+        }
+        else if (i===4) {
+          for(j = 0; j < c; j++) {
+            console.log('firing createDeckpart 2');
+            $('.player4Cards').append('<div class="card card'+j+'"><div class="suitp'+i+'c'+j+'">suit: class="suitp'+i+'c'+j+'"<span></span></div><div class="pointsp'+i+'c'+j+'">points: class="pointsp'+i+'c'+j+'" <span></span></div></div>');
+          }
+        }
+      }
+    }
+
+    function addTotal() {
+      console.log('firing addTotal');
+      for(i = 0; i < p; i++) {
+        $('.totalBoard').append('<div class="totalPlayer'+i+'"><h1>Player '+i+' cards: <span class ="total'+i+'Span">0</span></h1></div>');
+      }
+    }
+    shuffleCards();// Shuffle deck
+    placeCards();
+  }
+
+  /////  ========== shuffle all 52 cards  ============
   function shuffle(array) {
     var m = array.length, t, i;
     while (m) {
@@ -120,7 +174,7 @@ $(()=>{
     return array;
   }
 
-  function fillDeck() {
+  function shuffleCards() {
     suits.forEach((suit) => {
       names.forEach((name) => {
         cards.push({
@@ -133,84 +187,36 @@ $(()=>{
     console.log(cards);
   }
 
-  function drawCards(e) {
-    e.preventDefault();
-    // clear the board
-    $('.board').html('');
+////////============   PLACE CARDS   ====================
 
-    var p = $('#noOfPlayers').val();
-    var c = $('#noOfCards').val();
-    //slices top 5 off each deck
-    createDeck();
-    addTotal();
-  //  placeCards();
-
-    // create 'deck' for number of players
-    function createDeck() {
-      console.log('firing createDeck');
-      for(i = 0; i < p; i++) {
-        $('.board').append('<div class="playerCards player'+i+'Cards"><h2>This is player '+i+'\'s board</h2></div>');
-      //then create cards for each deck - This would work better as a loop, but i couldn't get the loops I tried to give me different classes er board.
-        if (i===0) {
-          for(j = 0; j < c; j++) {
-            console.log('firing createDeckpart 2');
-            $('.player0Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
-          }
-        }
-        else if (i===1) {
-          for(j = 0; j < c; j++) {
-            console.log('firing createDeckpart 2');
-            $('.player1Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
-          }
-        }
-        else if (i===2) {
-          for(j = 0; j < c; j++) {
-            console.log('firing createDeckpart 2');
-            $('.player2Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
-          }
-        }
-        else if (i===3) {
-          for(j = 0; j < c; j++) {
-            console.log('firing createDeckpart 2');
-            $('.player3Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
-          }
-        }
-        else if (i===4) {
-          for(j = 0; j < c; j++) {
-            console.log('firing createDeckpart 2');
-            $('.player4Cards').append('<div class="card card'+j+'"><p>suit: class="suitp'+i+'c'+j+'"<span class="suitp'+i+'c'+j+'"></span></p><p>points: class="pointsp'+i+'c'+j+'" <span class="pointsp'+i+'c'+j+'"></span></p></div>');
-          }
-        }
-      }
-    }
-
-
-    function addTotal() {
-      console.log('firing addTotal');
-      for(i = 0; i < p; i++) {
-        $('.totalBoard').append('<div class=""><h1>Player '+i+' cards: <span class ="total'+i+'Span">0</span></h1></div>');
-      }
-    }
-
-    //deal cards
-    // function dealCards() {
-    //   for(i = 0; i < c; i++) {
-    //     deck = cards.slice(0, c);
-    //
-    //   }
-    // }
-
-
-  }
-
+// first slice off 'c' cards for 'p' players.
+// then call a function to apply all the div classes the nominal value of the cards.
   function placeCards() {
-    fillDeck();// Shuffle deck
+    var c = $('#noOfCards').val();
     player0Deck = cards.slice(0, c);
     console.log(player0Deck, 'player0Deck');
     player1Deck = cards.slice(c, 2*c);
     console.log(player1Deck, 'player1Deck');
     player2Deck = cards.slice(2*c, 3*c);
     console.log(player2Deck, 'player2Deck');
+    player3Deck = cards.slice(3*c, 4*c);
+    console.log(player3Deck, 'player3Deck');
+    player4Deck = cards.slice(4*c, 5*c);
+    console.log(player4Deck, 'player4Deck');
+  }
+
+
+  function dealCards() {
+    let total0Span = 0;
+    let total1Span = 0;
+    let total2Span = 0;
+    let total3Span = 0;
+    let total4Span = 0;
+    let total0 = 0;
+    let total1 = 0;
+    let total2 = 0;
+    let total3 = 0;
+    let total4 = 0;
 
     //getting total points for player One
     total0 = player0Deck.reduce(function(a,b) {
@@ -218,20 +224,19 @@ $(()=>{
     }, 0);
     console.log(total0, 'total0');
 
+
     //add information to player one's cards
-    $total0Span.text(total0);
-    // $pointsp0c0.text(player0Deck[0].value);
-    $suitp0c0.text(player0Deck[0].suit);
-    $pointsp0c1.text(player0Deck[0].value);
-    $suitp0c1.text(player0Deck[0].suit);
-    $pointsp0c2.text(player0Deck[1].value);
-    $suitp0c2.text(player0Deck[1].suit);
-    $pointsp0c3.text(player0Deck[2].value);
-    $suitp0c3.text(player0Deck[2].suit);
-    // $pointsp0c4.text(player0Deck[3].value);
-    // $suitp0c4.text(player0Deck[3].suit);
-    // $pointsp0c5.text(player0Deck[4].value);
-    // $suitp0c5.text(player0Deck[4].suit);
+    $('.totalPlayer0 span').text(total0);
+    $('.suitp0c0 span').text(player0Deck[0].suit);
+    $('.pointsp0c0 span').text(player0Deck[0].value);
+    $('.suitp0c1 span').text(player0Deck[1].suit);
+    $('.pointsp0c1 span').text(player0Deck[1].value);
+    $('.suitp0c2 span').text(player0Deck[2].suit);
+    $('.pointsp0c2 span').text(player0Deck[2].value);
+    $('.suitp0c3 span').text(player0Deck[3].suit);
+    $('.pointsp0c3 span').text(player0Deck[3].value);
+    // $('.suitp0c4 span').text(player0Deck[4].suit);
+    // $('.pointsp0c4 span').text(player0Deck[4].value);
 
     //getting total points for player One
     total1 = player1Deck.reduce(function(a,b) {
@@ -239,44 +244,123 @@ $(()=>{
     }, 0);
     console.log(total1, 'total1');
 
-    //add information to player two's cards
-    $total1Span.text(total1);
-    $pointsp1c0.text(player1Deck[0].value);
-    $suitp1c0.text(player1Deck[0].suit);
-    $pointsp1c1.text(player1Deck[0].value);
-    $suitp1c1.text(player1Deck[0].suit);
-    $pointsp1c2.text(player1Deck[1].value);
-    $suitp1c2.text(player1Deck[1].suit);
-    $pointsp1c3.text(player1Deck[2].value);
-    $suitp1c3.text(player1Deck[2].suit);
-    // $pointsp1c4.text(player1Deck[3].value);
-    // $suitp1c4.text(player1Deck[3].suit);
-    // $pointsp1c5.text(player1Deck[4].value);
-    // $suitp1c5.text(player1Deck[4].suit);
+    //add information to player one's cards
+    $('.totalPlayer1 span').text(total1);
+    $('.suitp1c0 span').text(player1Deck[0].suit);
+    $('.pointsp1c0 span').text(player1Deck[0].value);
+    $('.suitp1c1 span').text(player1Deck[1].suit);
+    $('.pointsp1c1 span').text(player1Deck[1].value);
+    $('.suitp1c2 span').text(player1Deck[2].suit);
+    $('.pointsp1c2 span').text(player1Deck[2].value);
+    $('.suitp1c3 span').text(player1Deck[3].suit);
+    $('.pointsp1c3 span').text(player1Deck[3].value);
+    // $('.suitp1c4 span').text(player1Deck[4].suit);
+    // $('.pointsp1c4 span').text(player1Deck[4].value);
 
-    //get total points for player Two
+    //getting total points for player One
     total2 = player2Deck.reduce(function(a,b) {
       return a +b.value;
     }, 0);
     console.log(total2, 'total2');
 
-    //add information to player two's cards
-    $total2Span.text(total2);
-    $pointsp2c0.text(player2Deck[0].value);
-    $suitp2c0.text(player2Deck[0].suit);
-    $pointsp2c1.text(player2Deck[0].value);
-    $suitp2c1.text(player2Deck[0].suit);
-    $pointsp2c2.text(player2Deck[1].value);
-    $suitp2c2.text(player2Deck[1].suit);
-    $pointsp2c3.text(player2Deck[2].value);
-    $suitp2c3.text(player2Deck[2].suit);
-    // $pointsp2c4.text(player2Deck[3].value);
-    // $suitp2c4.text(player2Deck[3].suit);
-    // $pointsp2c5.text(player2Deck[4].value);
-    // $suitp2c5.text(player2Deck[4].suit);
+    //add information to player one's cards
+    $('.totalPlayer2 span').text(total2);
+    $('.suitp2c0 span').text(player2Deck[0].suit);
+    $('.pointsp2c0 span').text(player2Deck[0].value);
+    $('.suitp2c1 span').text(player2Deck[1].suit);
+    $('.pointsp2c1 span').text(player2Deck[1].value);
+    $('.suitp2c2 span').text(player2Deck[2].suit);
+    $('.pointsp2c2 span').text(player2Deck[2].value);
+    $('.suitp2c3 span').text(player2Deck[3].suit);
+    $('.pointsp2c3 span').text(player2Deck[3].value);
+    // $('.suitp2c4 span').text(player2Deck[4].suit);
+    // $('.pointsp2c4 span').text(player2Deck[4].value);
 
-    whoWins();
+    //getting total points for player One
+    total3 = player3Deck.reduce(function(a,b) {
+      return a +b.value;
+    }, 0);
+    console.log(total3, 'total3');
+
+    //add information to player three's cards
+    $('.totalPlayer3 span').text(total3);
+    $('.suitp3c0 span').text(player3Deck[0].suit);
+    $('.pointsp3c0 span').text(player3Deck[0].value);
+    $('.suitp3c1 span').text(player3Deck[1].suit);
+    $('.pointsp3c1 span').text(player3Deck[1].value);
+    $('.suitp3c2 span').text(player3Deck[2].suit);
+    $('.pointsp3c2 span').text(player3Deck[2].value);
+    $('.suitp3c3 span').text(player3Deck[3].suit);
+    $('.pointsp3c3 span').text(player3Deck[3].value);
+    // $('.suitp3c4 span').text(player3Deck[4].suit);
+    // $('.pointsp3c4 span').text(player3Deck[4].value);
+
+    //getting total points for player One
+    total4 = player4Deck.reduce(function(a,b) {
+      return a +b.value;
+    }, 0);
+    console.log(total4, 'total4');
+
+    //add information to player four's cards
+    $('.totalPlayer4 span').text(total4);
+    $('.suitp4c0 span').text(player4Deck[0].suit);
+    $('.pointsp4c0 span').text(player4Deck[0].value);
+    $('.suitp4c1 span').text(player4Deck[1].suit);
+    $('.pointsp4c1 span').text(player4Deck[1].value);
+    $('.suitp4c2 span').text(player4Deck[2].suit);
+    $('.pointsp4c2 span').text(player4Deck[2].value);
+    $('.suitp4c3 span').text(player4Deck[3].suit);
+    $('.pointsp4c3 span').text(player4Deck[3].value);
+    // $('.suitp4c4 span').text(player4Deck[4].suit);
+    // $('.pointsp4c4 span').text(player4Deck[4].value);
   }
+
+
+
+    // //getting total points for player One
+    // total1 = player1Deck.reduce(function(a,b) {
+    //   return a +b.value;
+    // }, 0);
+    // console.log(total1, 'total1');
+    //
+    // //add information to player two's cards
+    // $total1Span.text(total1);
+    // $pointsp1c0.text(player1Deck[0].value);
+    // $suitp1c0.text(player1Deck[0].suit);
+    // $pointsp1c1.text(player1Deck[0].value);
+    // $suitp1c1.text(player1Deck[0].suit);
+    // $pointsp1c2.text(player1Deck[1].value);
+    // $suitp1c2.text(player1Deck[1].suit);
+    // $pointsp1c3.text(player1Deck[2].value);
+    // $suitp1c3.text(player1Deck[2].suit);
+    // // $pointsp1c4.text(player1Deck[3].value);
+    // // $suitp1c4.text(player1Deck[3].suit);
+    // // $pointsp1c5.text(player1Deck[4].value);
+    // // $suitp1c5.text(player1Deck[4].suit);
+
+    // //get total points for player Two
+    // total2 = player2Deck.reduce(function(a,b) {
+    //   return a +b.value;
+    // }, 0);
+    // console.log(total2, 'total2');
+    //
+    // //add information to player two's cards
+    // $total2Span.text(total2);
+    // $pointsp2c0.text(player2Deck[0].value);
+    // $suitp2c0.text(player2Deck[0].suit);
+    // $pointsp2c1.text(player2Deck[0].value);
+    // $suitp2c1.text(player2Deck[0].suit);
+    // $pointsp2c2.text(player2Deck[1].value);
+    // $suitp2c2.text(player2Deck[1].suit);
+    // $pointsp2c3.text(player2Deck[2].value);
+    // $suitp2c3.text(player2Deck[2].suit);
+    // // $pointsp2c4.text(player2Deck[3].value);
+    // // $suitp2c4.text(player2Deck[3].suit);
+    // // $pointsp2c5.text(player2Deck[4].value);
+    // // $suitp2c5.text(player2Deck[4].suit);
+
+    // whoWins();
+
 
   // //if totalOne > totalTwo, then playerOne = winner, else if totalTwo > totalOne, then playerTwo = winner, else draw.
   function whoWins() {
