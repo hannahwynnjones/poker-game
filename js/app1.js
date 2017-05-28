@@ -145,3 +145,110 @@ $(()=>{
     }
   }
 });
+
+/////////////BEFORE WRITING OUT THE LONG WAY
+
+for (var i = 0; i < c; ++i) {
+  console.log('createDivVariables firing zzzz', 'c =', c,'i=',  i)
+  if (p === '0') {
+    $winner.text('need more than 1 player p==0')
+  }
+  else if (p === '1') {
+    $winner.text('need more than 1 player p===1')
+  }
+  else if (p === '2') {
+    for (var j = 0; j < p; ++j) {
+
+      if (c === '1') {
+        console.log('p=2 c=1');
+
+        // $('.suitp'+j+'c0 span').text(playerDeck0[0].suit);
+        // $('.pointsp'+j+'c0 span').text(playerDeck0[0].value);
+        // $('.suitp'+j+'c0 span').text(playerDeck1[0].suit);
+        // $('.pointsp'+j+'c0 span').text(playerDeck1[0].value);
+      }
+      else if (c === '2') {
+        console.log( 'j=', j);
+
+        $('.suitp'+j+'c0 span').text(playerDeck0[0].suit);
+        $('.pointsp'+j+'c0 span').text(playerDeck0[0].value);
+
+        // $('.suitp'+j+'c0 span').text(playerDeck1[0].suit);
+        // $('.pointsp'+j+'c0 span').text(playerDeck1[0].value);
+        //
+        // $('.suitp'+j+'c0 span').text(playerDeck2[0].suit);
+        // $('.pointsp'+j+'c0 span').text(playerDeck2[0].value);
+
+        // $('.suitp'+j+'c1 span').text(playerDeck0[1].suit);
+        // $('.pointsp'+j+'c1 span').text(playerDeck0[1].value);
+        //
+        // $('.suitp'+j+'c1 span').text(playerDeck1[1].suit);
+        // $('.pointsp'+j+'c1 span').text(playerDeck1[1].value);
+      }
+      else if (c === '3') {
+        console.log('p=2 c=3');
+        // $('.suitp'+j+'c0 span').text(playerDeck0[0].suit);
+        // $('.pointsp'+j+'c0 span').text(playerDeck0[0].value);
+        // $('.suitp'+j+'c0 span').text(playerDeck1[0].suit);
+        // $('.pointsp'+j+'c0 span').text(playerDeck1[0].value);
+        // $('.suitp'+j+'c1 span').text(playerDeck0[1].suit);
+        // $('.pointsp'+j+'c1 span').text(playerDeck0[1].value);
+        // $('.suitp'+j+'c1 span').text(playerDeck1[1].suit);
+        // $('.pointsp'+j+'c1 span').text(playerDeck1[1].value);
+        // $('.suitp'+j+'c2 span').text(playerDeck0[2].suit);
+        // $('.pointsp'+j+'c2 span').text(playerDeck0[2].value);
+        // $('.suitp'+j+'c2 span').text(playerDeck1[2].suit);
+        // $('.pointsp'+j+'c2 span').text(playerDeck1[2].value);
+      }
+      else if (c === '4') {
+        console.log('p=2 c=4');
+        // $('.suitp'+j+'c0 span').text(playerDeck0[0].suit);
+        // $('.pointsp'+j+'c0 span').text(playerDeck0[0].value);
+        // $('.suitp'+j+'c0 span').text(playerDeck1[0].suit);
+        // $('.pointsp'+j+'c0 span').text(playerDeck1[0].value);
+        // $('.suitp'+j+'c1 span').text(playerDeck0[1].suit);
+        // $('.pointsp'+j+'c1 span').text(playerDeck0[1].value);
+        // $('.suitp'+j+'c1 span').text(playerDeck1[1].suit);
+        // $('.pointsp'+j+'c1 span').text(playerDeck1[1].value);
+        // $('.suitp'+j+'c2 span').text(playerDeck0[2].suit);
+        // $('.pointsp'+j+'c2 span').text(playerDeck0[2].value);
+        // $('.suitp'+j+'c2 span').text(playerDeck1[2].suit);
+        // $('.pointsp'+j+'c2 span').text(playerDeck1[2].value);
+        // $('.suitp'+j+'c3 span').text(playerDeck0[3].suit);
+        // $('.pointsp'+j+'c3 span').text(playerDeck3[3].value);
+        // $('.suitp'+j+'c3 span').text(playerDeck1[3].suit);
+        // $('.pointsp'+j+'c3 span').text(playerDeck1[3].value);
+      }
+
+    }
+}
+  else if (p === '3') {
+    $winner.text('winnning c=3');
+    //player 1
+    // $('.suitp'+i+'c0 span').text(playerDeck2[2].suit);
+    // $('.pointsp'+i+'c0 span').text(playerDeck2[2].value);
+    // $('.suitp'+i+'c1 span').text(playerDeck2[2].suit);
+    // $('.pointsp'+i+'c1 span').text(playerDeck2[2].value);
+    // $('.suitp'+i+'c2 span').text(playerDeck2[2].suit);
+    // $('.pointsp'+i+'c2 span').text(playerDeck2[2].value);
+  }
+  else if (p ==='4') {
+    $winner.text('winnning c=4');
+    //console.log('pleasse', .suitp'+i+'c4 span);
+
+    // $('.suitp'+i+'c4 span').text('hellooooo');
+    // $('.suitp0c4 span').text('hellooooo222');
+    // $('.suitp'+i+'c4 span').text(`playerDeck${i}[4].suit`);
+    // $('.pointsp'+i+'c4 span').text(`playerDeck${i}[4].value`);
+  }
+  else if (p ==='5') {
+    // console.log('firrring for c=5');
+    // console.log(playerDeck[i][5]);
+    // $('.suitp'+i+'c5 span').text(playerDeck[i][5].suit);
+    // $('.pointsp'+i+'c5 span').text(playerDeck[i][5].value);
+  }
+  else {
+    console.log(c);
+    $winner.text('why dont you work!!!');
+  }
+}
