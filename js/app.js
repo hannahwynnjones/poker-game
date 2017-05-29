@@ -204,6 +204,7 @@ function placeCards() {
     console.log(total2, 'tot2');
     console.log(total3, 'tot3');
 
+
     var winner = Math.max(total0, total1, total2, total3)
 
     if (winner===total0) {
@@ -438,6 +439,349 @@ function placeCards() {
       $('.pointsp2c3 span').text(playerDeck3[3].value);
       $('.suitp2c4 span').text(playerDeck3[4].suit);
       $('.pointsp2c4 span').text(playerDeck3[4].value);
+    }
+    if (c==='1' && p==='4') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      //player 4
+      $('.suitp3c0 span').text(playerDeck4[0].suit);
+      $('.pointsp3c0 span').text(playerDeck4[0].value);
+    }
+
+    if (c==='2' && p==='4') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      $('.suitp0c1 span').text(playerDeck1[1].suit);
+      $('.pointsp0c1 span').text(playerDeck1[1].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      $('.suitp1c1 span').text(playerDeck2[1].suit);
+      $('.pointsp1c1 span').text(playerDeck2[1].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      $('.suitp2c1 span').text(playerDeck3[1].suit);
+      $('.pointsp2c1 span').text(playerDeck3[1].value);
+      //player 4
+      $('.suitp3c0 span').text(playerDeck4[0].suit);
+      $('.pointsp3c0 span').text(playerDeck4[0].value);
+      $('.suitp3c1 span').text(playerDeck4[1].suit);
+      $('.pointsp3c1 span').text(playerDeck4[1].value);
+    }
+
+    if (c==='3' && p==='4') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      $('.suitp0c1 span').text(playerDeck1[1].suit);
+      $('.pointsp0c1 span').text(playerDeck1[1].value);
+      $('.suitp0c2 span').text(playerDeck1[2].suit);
+      $('.pointsp0c2 span').text(playerDeck1[2].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      $('.suitp1c1 span').text(playerDeck2[1].suit);
+      $('.pointsp1c1 span').text(playerDeck2[1].value);
+      $('.suitp1c2 span').text(playerDeck2[2].suit);
+      $('.pointsp1c2 span').text(playerDeck2[2].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      $('.suitp2c1 span').text(playerDeck3[1].suit);
+      $('.pointsp2c1 span').text(playerDeck3[1].value);
+      $('.suitp2c2 span').text(playerDeck3[2].suit);
+      $('.pointsp2c2 span').text(playerDeck3[2].value);
+      //player 4
+      $('.suitp3c0 span').text(playerDeck4[0].suit);
+      $('.pointsp3c0 span').text(playerDeck4[0].value);
+      $('.suitp3c1 span').text(playerDeck4[1].suit);
+      $('.pointsp3c1 span').text(playerDeck4[1].value);
+      $('.suitp3c2 span').text(playerDeck4[2].suit);
+      $('.pointsp3c2 span').text(playerDeck4[2].value);
+    }
+
+    if (c==='4' && p==='4') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      $('.suitp0c1 span').text(playerDeck1[1].suit);
+      $('.pointsp0c1 span').text(playerDeck1[1].value);
+      $('.suitp0c2 span').text(playerDeck1[2].suit);
+      $('.pointsp0c2 span').text(playerDeck1[2].value);
+      $('.suitp0c3 span').text(playerDeck1[3].suit);
+      $('.pointsp0c3 span').text(playerDeck1[3].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      $('.suitp1c1 span').text(playerDeck2[1].suit);
+      $('.pointsp1c1 span').text(playerDeck2[1].value);
+      $('.suitp1c2 span').text(playerDeck2[2].suit);
+      $('.pointsp1c2 span').text(playerDeck2[2].value);
+      $('.suitp1c3 span').text(playerDeck2[3].suit);
+      $('.pointsp1c3 span').text(playerDeck2[3].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      $('.suitp2c1 span').text(playerDeck3[1].suit);
+      $('.pointsp2c1 span').text(playerDeck3[1].value);
+      $('.suitp2c2 span').text(playerDeck3[2].suit);
+      $('.pointsp2c2 span').text(playerDeck3[2].value);
+      $('.suitp2c3 span').text(playerDeck3[3].suit);
+      $('.pointsp2c3 span').text(playerDeck3[3].value);
+      //player 4
+      $('.suitp4c0 span').text(playerDeck4[0].suit);
+      $('.pointsp4c0 span').text(playerDeck4[0].value);
+      $('.suitp4c1 span').text(playerDeck4[1].suit);
+      $('.pointsp4c1 span').text(playerDeck4[1].value);
+      $('.suitp4c2 span').text(playerDeck4[2].suit);
+      $('.pointsp4c2 span').text(playerDeck4[2].value);
+      $('.suitp4c3 span').text(playerDeck4[4].suit);
+      $('.pointsp4c3 span').text(playerDeck4[3].value);
+    }
+
+    if (c==='5' && p==='4') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      $('.suitp0c1 span').text(playerDeck1[1].suit);
+      $('.pointsp0c1 span').text(playerDeck1[1].value);
+      $('.suitp0c2 span').text(playerDeck1[2].suit);
+      $('.pointsp0c2 span').text(playerDeck1[2].value);
+      $('.suitp0c3 span').text(playerDeck1[3].suit);
+      $('.pointsp0c3 span').text(playerDeck1[3].value);
+      $('.suitp0c4 span').text(playerDeck1[4].suit);
+      $('.pointsp0c4 span').text(playerDeck1[4].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      $('.suitp1c1 span').text(playerDeck2[1].suit);
+      $('.pointsp1c1 span').text(playerDeck2[1].value);
+      $('.suitp1c2 span').text(playerDeck2[2].suit);
+      $('.pointsp1c2 span').text(playerDeck2[2].value);
+      $('.suitp1c3 span').text(playerDeck2[3].suit);
+      $('.pointsp1c3 span').text(playerDeck2[3].value);
+      $('.suitp1c4 span').text(playerDeck2[4].suit);
+      $('.pointsp1c4 span').text(playerDeck2[4].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      $('.suitp2c1 span').text(playerDeck3[1].suit);
+      $('.pointsp2c1 span').text(playerDeck3[1].value);
+      $('.suitp2c2 span').text(playerDeck3[2].suit);
+      $('.pointsp2c2 span').text(playerDeck3[2].value);
+      $('.suitp2c3 span').text(playerDeck3[3].suit);
+      $('.pointsp2c3 span').text(playerDeck3[3].value);
+      $('.suitp2c4 span').text(playerDeck3[4].suit);
+      $('.pointsp2c4 span').text(playerDeck3[4].value);
+      //player 4
+      $('.suitp3c0 span').text(playerDeck4[0].suit);
+      $('.pointsp3c0 span').text(playerDeck4[0].value);
+      $('.suitp3c1 span').text(playerDeck4[1].suit);
+      $('.pointsp3c1 span').text(playerDeck4[1].value);
+      $('.suitp3c2 span').text(playerDeck4[2].suit);
+      $('.pointsp3c2 span').text(playerDeck4[2].value);
+      $('.suitp3c3 span').text(playerDeck4[3].suit);
+      $('.pointsp3c3 span').text(playerDeck4[3].value);
+      $('.suitp3c4 span').text(playerDeck4[4].suit);
+      $('.pointsp3c4 span').text(playerDeck4[4].value);
+    }
+    if (c==='1' && p==='5') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      //player 4
+      $('.suitp3c0 span').text(playerDeck4[0].suit);
+      $('.pointsp3c0 span').text(playerDeck4[0].value);
+      //player 5
+      $('.suitp4c0 span').text(playerDeck5[0].suit);
+      $('.pointsp4c0 span').text(playerDeck5[0].value);
+    }
+
+    if (c==='2' && p==='5') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      $('.suitp0c1 span').text(playerDeck1[1].suit);
+      $('.pointsp0c1 span').text(playerDeck1[1].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      $('.suitp1c1 span').text(playerDeck2[1].suit);
+      $('.pointsp1c1 span').text(playerDeck2[1].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      $('.suitp2c1 span').text(playerDeck3[1].suit);
+      $('.pointsp2c1 span').text(playerDeck3[1].value);
+      //player 4
+      $('.suitp3c0 span').text(playerDeck4[0].suit);
+      $('.pointsp3c0 span').text(playerDeck4[0].value);
+      $('.suitp3c1 span').text(playerDeck4[1].suit);
+      $('.pointsp3c1 span').text(playerDeck4[1].value);
+      //player 5
+      $('.suitp4c0 span').text(playerDeck5[0].suit);
+      $('.pointsp4c0 span').text(playerDeck5[0].value);
+      $('.suitp4c1 span').text(playerDeck5[1].suit);
+      $('.pointsp4c1 span').text(playerDeck5[1].value);
+    }
+
+    if (c==='3' && p==='5') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      $('.suitp0c1 span').text(playerDeck1[1].suit);
+      $('.pointsp0c1 span').text(playerDeck1[1].value);
+      $('.suitp0c2 span').text(playerDeck1[2].suit);
+      $('.pointsp0c2 span').text(playerDeck1[2].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      $('.suitp1c1 span').text(playerDeck2[1].suit);
+      $('.pointsp1c1 span').text(playerDeck2[1].value);
+      $('.suitp1c2 span').text(playerDeck2[2].suit);
+      $('.pointsp1c2 span').text(playerDeck2[2].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      $('.suitp2c1 span').text(playerDeck3[1].suit);
+      $('.pointsp2c1 span').text(playerDeck3[1].value);
+      $('.suitp2c2 span').text(playerDeck3[2].suit);
+      $('.pointsp2c2 span').text(playerDeck3[2].value);
+      //player 4
+      $('.suitp3c0 span').text(playerDeck4[0].suit);
+      $('.pointsp3c0 span').text(playerDeck4[0].value);
+      $('.suitp3c1 span').text(playerDeck4[1].suit);
+      $('.pointsp3c1 span').text(playerDeck4[1].value);
+      $('.suitp3c2 span').text(playerDeck4[2].suit);
+      $('.pointsp3c2 span').text(playerDeck4[2].value);
+      //player 5
+      $('.suitp4c0 span').text(playerDeck5[0].suit);
+      $('.pointsp4c0 span').text(playerDeck5[0].value);
+      $('.suitp4c1 span').text(playerDeck5[1].suit);
+      $('.pointsp4c1 span').text(playerDeck5[1].value);
+      $('.suitp4c2 span').text(playerDeck5[2].suit);
+      $('.pointsp4c2 span').text(playerDeck5[2].value);
+    }
+
+    if (c==='4' && p==='5') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      $('.suitp0c1 span').text(playerDeck1[1].suit);
+      $('.pointsp0c1 span').text(playerDeck1[1].value);
+      $('.suitp0c2 span').text(playerDeck1[2].suit);
+      $('.pointsp0c2 span').text(playerDeck1[2].value);
+      $('.suitp0c3 span').text(playerDeck1[3].suit);
+      $('.pointsp0c3 span').text(playerDeck1[3].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      $('.suitp1c1 span').text(playerDeck2[1].suit);
+      $('.pointsp1c1 span').text(playerDeck2[1].value);
+      $('.suitp1c2 span').text(playerDeck2[2].suit);
+      $('.pointsp1c2 span').text(playerDeck2[2].value);
+      $('.suitp1c3 span').text(playerDeck2[3].suit);
+      $('.pointsp1c3 span').text(playerDeck2[3].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      $('.suitp2c1 span').text(playerDeck3[1].suit);
+      $('.pointsp2c1 span').text(playerDeck3[1].value);
+      $('.suitp2c2 span').text(playerDeck3[2].suit);
+      $('.pointsp2c2 span').text(playerDeck3[2].value);
+      $('.suitp2c3 span').text(playerDeck3[3].suit);
+      $('.pointsp2c3 span').text(playerDeck3[3].value);
+      //player 4
+      $('.suitp4c0 span').text(playerDeck4[0].suit);
+      $('.pointsp4c0 span').text(playerDeck4[0].value);
+      $('.suitp4c1 span').text(playerDeck4[1].suit);
+      $('.pointsp4c1 span').text(playerDeck4[1].value);
+      $('.suitp4c2 span').text(playerDeck4[2].suit);
+      $('.pointsp4c2 span').text(playerDeck4[2].value);
+      $('.suitp4c3 span').text(playerDeck4[4].suit);
+      $('.pointsp4c3 span').text(playerDeck4[3].value);
+      //player 5
+      $('.suitp5c0 span').text(playerDeck5[0].suit);
+      $('.pointsp5c0 span').text(playerDeck5[0].value);
+      $('.suitp5c1 span').text(playerDeck5[1].suit);
+      $('.pointsp5c1 span').text(playerDeck5[1].value);
+      $('.suitp5c2 span').text(playerDeck5[2].suit);
+      $('.pointsp5c2 span').text(playerDeck5[2].value);
+      $('.suitp5c3 span').text(playerDeck5[4].suit);
+      $('.pointsp5c3 span').text(playerDeck5[3].value);
+    }
+
+    if (c==='5' && p==='5') {
+      //player 1
+      $('.suitp0c0 span').text(playerDeck1[0].suit);
+      $('.pointsp0c0 span').text(playerDeck1[0].value);
+      $('.suitp0c1 span').text(playerDeck1[1].suit);
+      $('.pointsp0c1 span').text(playerDeck1[1].value);
+      $('.suitp0c2 span').text(playerDeck1[2].suit);
+      $('.pointsp0c2 span').text(playerDeck1[2].value);
+      $('.suitp0c3 span').text(playerDeck1[3].suit);
+      $('.pointsp0c3 span').text(playerDeck1[3].value);
+      $('.suitp0c4 span').text(playerDeck1[4].suit);
+      $('.pointsp0c4 span').text(playerDeck1[4].value);
+      //player 2
+      $('.suitp1c0 span').text(playerDeck2[0].suit);
+      $('.pointsp1c0 span').text(playerDeck2[0].value);
+      $('.suitp1c1 span').text(playerDeck2[1].suit);
+      $('.pointsp1c1 span').text(playerDeck2[1].value);
+      $('.suitp1c2 span').text(playerDeck2[2].suit);
+      $('.pointsp1c2 span').text(playerDeck2[2].value);
+      $('.suitp1c3 span').text(playerDeck2[3].suit);
+      $('.pointsp1c3 span').text(playerDeck2[3].value);
+      $('.suitp1c4 span').text(playerDeck2[4].suit);
+      $('.pointsp1c4 span').text(playerDeck2[4].value);
+      //player 3
+      $('.suitp2c0 span').text(playerDeck3[0].suit);
+      $('.pointsp2c0 span').text(playerDeck3[0].value);
+      $('.suitp2c1 span').text(playerDeck3[1].suit);
+      $('.pointsp2c1 span').text(playerDeck3[1].value);
+      $('.suitp2c2 span').text(playerDeck3[2].suit);
+      $('.pointsp2c2 span').text(playerDeck3[2].value);
+      $('.suitp2c3 span').text(playerDeck3[3].suit);
+      $('.pointsp2c3 span').text(playerDeck3[3].value);
+      $('.suitp2c4 span').text(playerDeck3[4].suit);
+      $('.pointsp2c4 span').text(playerDeck3[4].value);
+      //player 4
+      $('.suitp3c0 span').text(playerDeck4[0].suit);
+      $('.pointsp3c0 span').text(playerDeck4[0].value);
+      $('.suitp3c1 span').text(playerDeck4[1].suit);
+      $('.pointsp3c1 span').text(playerDeck4[1].value);
+      $('.suitp3c2 span').text(playerDeck4[2].suit);
+      $('.pointsp3c2 span').text(playerDeck4[2].value);
+      $('.suitp3c3 span').text(playerDeck4[3].suit);
+      $('.pointsp3c3 span').text(playerDeck4[3].value);
+      $('.suitp3c4 span').text(playerDeck4[4].suit);
+      $('.pointsp3c4 span').text(playerDeck4[4].value);
+      //player 5
+      $('.suitp4c0 span').text(playerDeck5[0].suit);
+      $('.pointsp4c0 span').text(playerDeck5[0].value);
+      $('.suitp4c1 span').text(playerDeck5[1].suit);
+      $('.pointsp4c1 span').text(playerDeck5[1].value);
+      $('.suitp4c2 span').text(playerDeck5[2].suit);
+      $('.pointsp4c2 span').text(playerDeck5[2].value);
+      $('.suitp4c3 span').text(playerDeck5[3].suit);
+      $('.pointsp4c3 span').text(playerDeck5[3].value);
+      $('.suitp4c4 span').text(playerDeck5[4].suit);
+      $('.pointsp4c4 span').text(playerDeck5[4].value);
     }
     whoWins();
   }
