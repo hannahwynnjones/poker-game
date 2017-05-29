@@ -1,8 +1,11 @@
 console.log('JS loaded');
 
 $(()=>{
-  //looking at 2 player game with 5 cards first then will look at changing these varibles and shorten code using forEach loops
-  //
+  //I first looked at 2 player game with 5 cards, then dynamically added cards and their classes depending on the input.  Then I had issues with the 'for' loops so decided to write out each function for all cases between 1-5 cards and 1-5 players so it's clear what the for loop is doing before I try implementing it.  I will come back to this and add the working loops as this feels likes a horrible work around at the moment.
+
+  //There are currentl 2 bugs.  The first is that I've used 11, 12 and 13 instead of jack, queen and king.  The other is that 5 decks of cards are sliced of the deck each time, so in the case of a 2 player game - player 3, 4 or 5 can be declared the winner.  I originally had a loop going for this but it was pushing out the same data for all decks.
+
+  //I'd also like to go through the code to stop remove any player 0s and replace with player 1s
 
   var playerDeck0 = [];
   var playerDeck1 = [];
@@ -34,20 +37,10 @@ $(()=>{
   // const cardies = [{points: 1, name: 'Ace'}, {points: 2, name: 'Two'}, {points: 3, name: 'Three'}, {points: 4, name: 'Four'}, {points: 5, name: 'Five'}, {points: 6, name: 'Six'}, {points: 7, name: 'Seven'}, {points: 8, name: 'Eight'}, {points: 9, name: 'Nine'}, {points: 10, name: 'Ten'}, {points: 11, name: 'Jack'}, {points: 12, name: 'Queen'}, {points: 13, name: 'King'}];
   const suits = ['clubs','diamonds','spades','hearts'];
   let cards = [];
-  let popped;
 
   const $submit = $('.submit');
-
-  const $shuffle = $('.shuffle');
-  const $draw = $('.draw');
   const $pop = $('.pop');
-  const $card = $('.card');
-  const $name = $('.name');
-  const $suit = $('.suit');
-  const $points =$('.points');
-
   const $winner = $('.winner');
-  const $start = $('.start');
 
   $submit.on('click', drawBoard);
   $pop.on('click', createDivVariables);
@@ -59,12 +52,10 @@ $(()=>{
 
     var p = $('#noOfPlayers').val();
     var c = $('#noOfCards').val();
-    //slices top 5 off each deck
-    // createVariables();
     createDeck();
     addTotal();
 
-    //===========create 'deck' for number of players=======
+    //===========  create 'deck' for number of players depending on choice of c and p  =======
     function createDeck() {
       console.log('firing createDeck');
       for(i = 0; i < p; i++) {
@@ -114,11 +105,13 @@ $(()=>{
         $('.totalBoard').append('<div class="totalPlayer'+i+'"><h1>Player '+(i+1)+' cards: <span class ="total'+i+'Span">0</span></h1></div>');
       }
     }
-    shuffleCards();// Shuffle deck
+    shuffleCards();
     placeCards();
   }
 
   /////  ========== shuffle all 52 cards  ============
+
+//  shuffle cards
   function shuffle(array) {
     var m = array.length, t, i;
     while (m) {
@@ -129,7 +122,7 @@ $(()=>{
     }
     return array;
   }
-
+//assign suit and value to each card
   function shuffleCards() {
     suits.forEach((suit) => {
       names.forEach((name) => {
@@ -145,10 +138,9 @@ $(()=>{
 
 ////////============   PLACE CARDS   ====================
 
-// first slice off 'c' cards for 'p' players.
-// then call a function to apply all the div classes the nominal value of the cards.
-function placeCards() {
-  console.log( 'placeCards firing')
+// first slice off 'c' cards for 'p' players.  Currently fixed at 5 decks, this should a be a for loop depending on number of players playing.
+  function placeCards() {
+    console.log( 'placeCards firing');
 
     var c = $('#noOfCards').val();
     playerDeck0 = cards.slice(0, c);
@@ -165,8 +157,7 @@ function placeCards() {
     console.log(playerDeck5, 'playerDeck5');
   }
 
-  function totols() {
-    console.log('firing totals');
+  function totals() {
     // for(i = 0; i < p; i++) {
     //   var total = 0;
     //   var playerDeck = 0;
@@ -194,18 +185,17 @@ function placeCards() {
       return a +b.value;
     }, 0);
   }
-  // //if totalOne > totalTwo, then playerOne = winner, else if totalTwo > totalOne, then playerTwo = winner, else draw.
+
   function whoWins() {
 
-    console.log('firing whoWins');
-    totols();
+    totals();
     console.log(total0, 'tot0');
     console.log(total1, 'tot1');
     console.log(total2, 'tot2');
     console.log(total3, 'tot3');
+    console.log(total4, 'tot4');
 
-
-    var winner = Math.max(total0, total1, total2, total3)
+    var winner = Math.max(total0, total1, total2, total3, total4);
 
     if (winner===total0) {
       $winner.text('Player One wins');
@@ -219,6 +209,9 @@ function placeCards() {
     else if (winner===total3) {
       $winner.text('Player Four wins');
     }
+    else if (winner===total4) {
+      $winner.text('Player Five wins');
+    }
     else {
       $winner.text('No winner, it\'s a draw');
     }
@@ -230,6 +223,7 @@ function placeCards() {
     $('.totalPlayer5 span').text(total5);
   }
 
+//LOOKS HORRIBLE - need loops instead of typing out all posibilities for up to 5 players and 5 cards.  Won't work if p===6.
   function createDivVariables() {
     var p = $('#noOfPlayers').val();
     var c = $('#noOfCards').val();
@@ -783,7 +777,11 @@ function placeCards() {
       $('.suitp4c4 span').text(playerDeck5[4].suit);
       $('.pointsp4c4 span').text(playerDeck5[4].value);
     }
+    else {
+      $winner.text('please choose players and cards between 1-5');
+    }
     whoWins();
+
   }
 
 
