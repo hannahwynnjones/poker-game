@@ -20,7 +20,7 @@ This app uses HTML5, CSS3 and JavaScript.
 
 * Change 11, 12 and 13 to Jack, Queen and King
 * Put most of the code into loops to make it dynamic.
-* Make it look a little less boxy and more attractive.
+* Make it look a little less boxy and more attractive, images instead of cards.
 * Score Board
 
 <p align="center" style="padding: 20px 0;">
