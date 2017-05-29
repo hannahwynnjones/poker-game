@@ -538,7 +538,7 @@ $(()=>{
       $('.pointsp4c1 span').text(playerDeck4[1].value);
       $('.suitp4c2 span').text(playerDeck4[2].suit);
       $('.pointsp4c2 span').text(playerDeck4[2].value);
-      $('.suitp4c3 span').text(playerDeck4[4].suit);
+      $('.suitp4c3 span').text(playerDeck4[3].suit);
       $('.pointsp4c3 span').text(playerDeck4[3].value);
     }
 
